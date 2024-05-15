@@ -42,7 +42,7 @@ class ContractHistoriesController < ApplicationController
   # DELETE /contract_histories/1
   def destroy
     @contract_history.destroy!
-    redirect_to contract_histories_url, notice: "契約履歴を削除しました。", status: :see_other
+    flash.now.notice = "契約履歴を削除しました。"
   end
 
   private

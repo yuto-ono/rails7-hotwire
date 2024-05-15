@@ -13,7 +13,9 @@
   <body>
     <%= render "header" %>
     <div class="container mt-4">
-      <%= render "flash" %>
+      <div id="flash">
+        <%= render "flash" %>
+      </div>
       <%= yield %>
     </div>
   </body>
