@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      contract_history: 契約履歴
+    attributes:
+      contract_history:
+        company: 電力会社
+        plan: 電気料金プラン
+        ampere: 契約容量
+        start_at: 契約開始日
