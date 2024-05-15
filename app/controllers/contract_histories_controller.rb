@@ -33,7 +33,7 @@ class ContractHistoriesController < ApplicationController
   # PATCH/PUT /contract_histories/1
   def update
     if @contract_history.update(contract_history_params)
-      redirect_to @contract_history, notice: "契約履歴を更新しました。", status: :see_other
+      flash.now.notice = "契約履歴を更新しました。"
     else
       render :edit, status: :unprocessable_entity
     end
