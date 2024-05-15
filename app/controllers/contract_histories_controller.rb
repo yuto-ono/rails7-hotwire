@@ -24,7 +24,7 @@ class ContractHistoriesController < ApplicationController
     @contract_history = ContractHistory.new(contract_history_params)
 
     if @contract_history.save
-      redirect_to @contract_history, notice: "Contract history was successfully created."
+      redirect_to @contract_history, notice: "契約履歴を追加しました。"
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class ContractHistoriesController < ApplicationController
   # PATCH/PUT /contract_histories/1
   def update
     if @contract_history.update(contract_history_params)
-      redirect_to @contract_history, notice: "Contract history was successfully updated.", status: :see_other
+      redirect_to @contract_history, notice: "契約履歴を更新しました。", status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class ContractHistoriesController < ApplicationController
   # DELETE /contract_histories/1
   def destroy
     @contract_history.destroy!
-    redirect_to contract_histories_url, notice: "Contract history was successfully destroyed.", status: :see_other
+    redirect_to contract_histories_url, notice: "契約履歴を削除しました。", status: :see_other
   end
 
   private

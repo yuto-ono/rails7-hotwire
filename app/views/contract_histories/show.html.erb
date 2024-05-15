@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @contract_history %>
 
+<div class="mb-3">
+  <%= link_to "編集", edit_contract_history_path(@contract_history) %> |
+  <%= link_to "契約履歴一覧に戻る", contract_histories_path %>
+</div>
 <div>
-  <%= link_to "Edit this contract history", edit_contract_history_path(@contract_history) %> |
-  <%= link_to "Back to contract histories", contract_histories_path %>
-
-  <%= button_to "Destroy this contract history", @contract_history, method: :delete %>
+  <%= button_to "削除", @contract_history, method: :delete, class: "btn btn-danger" %>
 </div>

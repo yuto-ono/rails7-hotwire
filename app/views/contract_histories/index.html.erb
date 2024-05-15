@@ -1,14 +1,33 @@
-<p style="color: green"><%= notice %></p>
+<h1>契約履歴</h1>
 
-<h1>Contract histories</h1>
-
-<div id="contract_histories">
-  <% @contract_histories.each do |contract_history| %>
-    <%= render contract_history %>
-    <p>
-      <%= link_to "Show this contract history", contract_history %>
-    </p>
-  <% end %>
+<div id="contract_histories" class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>電力会社</th>
+        <th>電気料金プラン</th>
+        <th>契約容量</th>
+        <th>契約開始日</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contract_histories.each do |contract_history| %>
+        <tr>
+          <td><%= contract_history.company %></td>
+          <td><%= contract_history.plan %></td>
+          <td><%= contract_history.ampere %>A</td>
+          <td><%= contract_history.start_at %></td>
+          <td>
+            <div class="d-flex gap-2">
+              <%= link_to "編集", edit_contract_history_path(contract_history), class: "btn btn-sm btn-primary" %>
+              <%= button_to "削除", contract_history, method: :delete, class: "btn btn-sm btn-danger" %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New contract history", new_contract_history_path %>
+<%= link_to "契約履歴を追加する", new_contract_history_path, class: "btn btn-primary" %>
