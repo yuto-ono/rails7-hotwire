@@ -1,7 +1,41 @@
-<%= bootstrap_form_with(model: contract_history) do |form| %>
-  <%= form.text_field :company %>
-  <%= form.text_field :plan %>
-  <%= form.number_field :ampere, append: "A" %>
-  <%= form.date_field :start_at %>
-  <%= form.primary %>
+<%= turbo_frame_tag contract_history do %>
+  <%= bootstrap_form_with(model: contract_history) do |form| %>
+    <div class="row py-2 border-bottom">
+      <div class="col-3">
+        <%= form.text_field :company,
+          skip_label: true,
+          label_as_placeholder: true,
+          wrapper: false
+        %>
+      </div>
+      <div class="col-3">
+        <%= form.text_field :plan,
+          skip_label: true,
+          label_as_placeholder: true,
+          wrapper: false
+        %>
+      </div>
+      <div class="col-2">
+        <%= form.number_field :ampere,
+          append: "A",
+          skip_label: true,
+          label_as_placeholder: true,
+          wrapper: false
+        %>
+      </div>
+      <div class="col-2">
+        <%= form.date_field :start_at,
+          skip_label: true,
+          label_as_placeholder: true,
+          wrapper: false
+        %>
+      </div>
+      <div class="col-2">
+        <div class="d-flex gap-2">
+          <%= form.primary class: "btn btn-sm btn-primary" %>
+          <%= link_to "キャンセル", contract_history, class: "btn btn-sm btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>

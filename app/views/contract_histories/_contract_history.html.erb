@@ -1,22 +1,14 @@
-<div id="<%= dom_id contract_history %>">
-  <p>
-    <strong>電力会社:</strong>
-    <%= contract_history.company %>
-  </p>
-
-  <p>
-    <strong>電気料金プラン:</strong>
-    <%= contract_history.plan %>
-  </p>
-
-  <p>
-    <strong>契約容量:</strong>
-    <%= contract_history.ampere %>A
-  </p>
-
-  <p>
-    <strong>契約開始日:</strong>
-    <%= contract_history.start_at %>
-  </p>
-
-</div>
+<%= turbo_frame_tag contract_history do %>
+  <div class="row py-2 border-bottom">
+    <div class="col-3"><%= contract_history.company %></div>
+    <div class="col-3"><%= contract_history.plan %></div>
+    <div class="col-2"><%= contract_history.ampere %>A</div>
+    <div class="col-2"><%= contract_history.start_at %></div>
+    <div class="col-2">
+      <div class="d-flex gap-2">
+        <%= link_to "編集", edit_contract_history_path(contract_history), class: "btn btn-sm btn-primary" %>
+        <%= button_to "削除", contract_history, method: :delete, class: "btn btn-sm btn-danger" %>
+      </div>
+    </div>
+  </div>
+<% end %>
