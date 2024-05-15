@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend "contract_histories", @contract_history %>
+<%= turbo_stream.update ContractHistory.new, "" %>
+<%= turbo_stream_flash %>

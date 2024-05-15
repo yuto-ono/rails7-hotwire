@@ -24,7 +24,7 @@ class ContractHistoriesController < ApplicationController
     @contract_history = ContractHistory.new(contract_history_params)
 
     if @contract_history.save
-      redirect_to @contract_history, notice: "契約履歴を追加しました。"
+      flash.now.notice = "契約履歴を追加しました。"
     else
       render :new, status: :unprocessable_entity
     end
