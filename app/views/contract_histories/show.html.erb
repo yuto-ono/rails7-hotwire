@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @contract_history %>
+
+<div>
+  <%= link_to "Edit this contract history", edit_contract_history_path(@contract_history) %> |
+  <%= link_to "Back to contract histories", contract_histories_path %>
+
+  <%= button_to "Destroy this contract history", @contract_history, method: :delete %>
+</div>

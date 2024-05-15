@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Contract histories</h1>
+
+<div id="contract_histories">
+  <% @contract_histories.each do |contract_history| %>
+    <%= render contract_history %>
+    <p>
+      <%= link_to "Show this contract history", contract_history %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New contract history", new_contract_history_path %>
