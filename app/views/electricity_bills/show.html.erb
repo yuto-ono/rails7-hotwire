@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @electricity_bill %>
+
+<div>
+  <%= link_to "Edit this electricity bill", edit_electricity_bill_path(@electricity_bill) %> |
+  <%= link_to "Back to electricity bills", electricity_bills_path %>
+
+  <%= button_to "Destroy this electricity bill", @electricity_bill, method: :delete %>
+</div>

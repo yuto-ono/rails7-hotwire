@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :electricity_bills
   resources :contract_histories
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

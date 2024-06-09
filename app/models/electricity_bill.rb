@@ -1,0 +1,2 @@
+class ElectricityBill < ApplicationRecord
+end

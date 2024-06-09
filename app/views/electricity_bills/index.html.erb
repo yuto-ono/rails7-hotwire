@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Electricity bills</h1>
+
+<div id="electricity_bills">
+  <% @electricity_bills.each do |electricity_bill| %>
+    <%= render electricity_bill %>
+    <p>
+      <%= link_to "Show this electricity bill", electricity_bill %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New electricity bill", new_electricity_bill_path %>
