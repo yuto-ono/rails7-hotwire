@@ -7,7 +7,7 @@
           <%= link_to "契約履歴", contract_histories_path, class: "nav-link #{'active' if current_page?(contract_histories_path)}" %>
         </li>
         <li class="nav-item">
-          <span class="nav-link">電気代</span>
+          <%= link_to "電気代", electricity_bills_path, class: "nav-link #{'active' if current_page?(electricity_bills_path)}" %>
         </li>
       </ul>
     </div>
