@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend "electricity_bills", @electricity_bill %>
+<%= turbo_stream.update ElectricityBill.new, "" %>
+<%= turbo_stream_flash %>

@@ -1,10 +1,8 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @electricity_bill %>
 
-<div>
-  <%= link_to "Edit this electricity bill", edit_electricity_bill_path(@electricity_bill) %> |
-  <%= link_to "Back to electricity bills", electricity_bills_path %>
+<div class="mb-3">
+  <%= link_to "編集", edit_electricity_bill_path(@electricity_bill) %> |
+  <%= link_to "電気代一覧に戻る", electricity_bills_path %>
 
-  <%= button_to "Destroy this electricity bill", @electricity_bill, method: :delete %>
+  <%= button_to "削除", @electricity_bill, method: :delete %>
 </div>

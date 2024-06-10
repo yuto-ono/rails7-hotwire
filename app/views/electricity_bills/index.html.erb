@@ -1,14 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<h1>電気代</h1>
 
-<h1>Electricity bills</h1>
-
-<div id="electricity_bills">
-  <% @electricity_bills.each do |electricity_bill| %>
-    <%= render electricity_bill %>
-    <p>
-      <%= link_to "Show this electricity bill", electricity_bill %>
-    </p>
-  <% end %>
+<div class="row py-2 border-bottom">
+  <div class="col-4 fw-bold">請求月</div>
+  <div class="col-4 fw-bold">電気代</div>
+  <div class="col-4 fw-bold">
+    <%= link_to "新規追加",
+      new_electricity_bill_path,
+      class: "btn btn-sm btn-primary",
+      data: { turbo_frame: dom_id(ElectricityBill.new) }
+    %>
+  </div>
 </div>
-
-<%= link_to "New electricity bill", new_electricity_bill_path %>
+<%= turbo_frame_tag ElectricityBill.new %>
+<div id="electricity_bills">
+  <%= render @electricity_bills %>
+</div>

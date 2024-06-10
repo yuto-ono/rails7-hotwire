@@ -1,12 +1,22 @@
-<div id="<%= dom_id electricity_bill %>">
-  <p>
-    <strong>Month:</strong>
-    <%= electricity_bill.month %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= electricity_bill.amount %>
-  </p>
-
-</div>
+<%= turbo_frame_tag electricity_bill do %>
+  <div class="row py-2 border-bottom">
+    <div class="col-4"><%= electricity_bill.month.strftime('%Y年%m月') %></div>
+    <div class="col-4"><%= electricity_bill.amount.to_formatted_s(:delimited)%>円</div>
+    <div class="col-4">
+      <div class="d-flex gap-2">
+        <%= link_to "編集",
+          edit_electricity_bill_path(electricity_bill),
+          class: "btn btn-sm btn-primary"
+        %>
+        <%= link_to "削除",
+          electricity_bill,
+          class: "btn btn-sm btn-danger",
+          data: {
+            turbo_method: :delete,
+            turbo_confirm: "削除しますか？"
+          }
+        %>
+      </div>
+    </div>
+  </div>
+<% end %>

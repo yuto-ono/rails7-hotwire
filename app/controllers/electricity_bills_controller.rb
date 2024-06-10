@@ -24,7 +24,7 @@ class ElectricityBillsController < ApplicationController
     @electricity_bill = ElectricityBill.new(electricity_bill_params)
 
     if @electricity_bill.save
-      redirect_to @electricity_bill, notice: "Electricity bill was successfully created."
+      flash.now.notice = "電気代を追加しました。"
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class ElectricityBillsController < ApplicationController
   # PATCH/PUT /electricity_bills/1
   def update
     if @electricity_bill.update(electricity_bill_params)
-      redirect_to @electricity_bill, notice: "Electricity bill was successfully updated.", status: :see_other
+      flash.now.notice = "電気代を更新しました。"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class ElectricityBillsController < ApplicationController
   # DELETE /electricity_bills/1
   def destroy
     @electricity_bill.destroy!
-    redirect_to electricity_bills_url, notice: "Electricity bill was successfully destroyed.", status: :see_other
+    flash.now.notice = "電気代を削除しました。"
   end
 
   private

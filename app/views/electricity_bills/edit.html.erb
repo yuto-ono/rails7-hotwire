@@ -1,10 +1,8 @@
-<h1>Editing electricity bill</h1>
+<h1>電気代を編集</h1>
 
 <%= render "form", electricity_bill: @electricity_bill %>
 
-<br>
-
-<div>
-  <%= link_to "Show this electricity bill", @electricity_bill %> |
-  <%= link_to "Back to electricity bills", electricity_bills_path %>
+<div class="mt-2">
+  <%= link_to "詳細", @electricity_bill %> |
+  <%= link_to "電気代一覧に戻る", electricity_bills_path %>
 </div>

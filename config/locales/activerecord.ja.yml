@@ -2,9 +2,13 @@ ja:
   activerecord:
     models:
       contract_history: 契約履歴
+      electricity_bill: 電気代
     attributes:
       contract_history:
         company: 電力会社
         plan: 電気料金プラン
         ampere: 契約容量
         start_at: 契約開始日
+      electricity_bill:
+        month: 請求月
+        amount: 金額
