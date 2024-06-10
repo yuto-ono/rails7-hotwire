@@ -1,7 +1,7 @@
 <%= turbo_frame_tag electricity_bill do %>
   <div class="row py-2 border-bottom">
-    <div class="col-4"><%= electricity_bill.month.strftime('%Y年%m月') %></div>
-    <div class="col-4"><%= electricity_bill.amount.to_formatted_s(:delimited)%>円</div>
+    <div class="col-4"><%= render(MonthComponent.new(month: electricity_bill.month)) %></div>
+    <div class="col-4"><%= render(PriceComponent.new(price: electricity_bill.amount)) %></div>
     <div class="col-4">
       <div class="d-flex gap-2">
         <%= link_to "編集",
